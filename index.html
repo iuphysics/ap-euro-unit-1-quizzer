@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AP Euro Unit 1 | Quizzer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <p class="eyebrow">AP European History · Unit 1</p>
+      <h1>Study the bank. Build the recall.</h1>
+      <p class="intro">Practice every supplied multiple-choice and free-response prompt in one focused, browser-only study space.</p>
+      <div class="stats" id="stats"></div>
+    </header>
+    <main>
+      <nav class="tabs" aria-label="Question type">
+        <button class="tab active" data-view="mcq">Multiple Choice</button>
+        <button class="tab" data-view="frq">Free Response</button>
+      </nav>
+      <section id="mcq" class="view active">
+        <div class="controls">
+          <label>Question <select id="mcq-picker"></select></label>
+          <button id="shuffle" class="secondary">Shuffle</button>
+          <button id="reset-mcq" class="secondary">Reset answers</button>
+        </div>
+        <article class="question-card" id="mcq-card"></article>
+        <div class="pager"><button id="prev-mcq" class="secondary">← Previous</button><button id="next-mcq">Next →</button></div>
+      </section>
+      <section id="frq" class="view">
+        <div class="controls">
+          <label>Prompt <select id="frq-picker"></select></label>
+          <button id="reset-frq" class="secondary">Reset response</button>
+        </div>
+        <article class="question-card" id="frq-card"></article>
+        <div class="pager"><button id="prev-frq" class="secondary">← Previous</button><button id="next-frq">Next →</button></div>
+      </section>
+    </main>
+    <footer>Progress is saved only in this browser. Source: supplied AP European History Unit 1 question bank.</footer>
+    <script src="data/questions.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
