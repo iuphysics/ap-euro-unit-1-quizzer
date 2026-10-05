@@ -16,6 +16,19 @@ if (misplacedStimulus && question4) {
 }
 const question63 = mcq.find(question => question.id === 63);
 if (question63) question63.options[question63.options.length - 1] = question63.options.at(-1).replace(/\nINDEXED COMPARISON[\s\S]*$/, '');
+// A few PDF page breaks put the shared reading passage for the next question
+// immediately after the final answer choice. Keep answer choices concise and
+// show that source above the following question instead.
+mcq.forEach((question, index) => {
+  const lastOption = question.options.at(-1);
+  const nextQuestion = mcq[index + 1];
+  const splitAt = lastOption?.indexOf('\n\n') ?? -1;
+  if (splitAt > -1 && nextQuestion) {
+    const sharedSource = lastOption.slice(splitAt).trim();
+    question.options[question.options.length - 1] = lastOption.slice(0, splitAt).trim();
+    nextQuestion.context = [nextQuestion.context, sharedSource].filter(Boolean).join('\n\n');
+  }
+});
 let mcqIndex = 0, frqIndex = 0;
 const key = (type, id) => `ap-euro-u1-${type}-${id}`;
 const missedKey = 'ap-euro-u1-missed';
