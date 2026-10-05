@@ -23,8 +23,10 @@
         <div class="controls">
           <label>Question <select id="mcq-picker"></select></label>
           <button id="shuffle" class="secondary">Shuffle</button>
+          <button id="review-wrong" class="secondary">Review missed</button>
           <button id="reset-mcq" class="secondary">Reset answers</button>
         </div>
+        <aside id="missed-panel" class="missed-panel" hidden></aside>
         <article class="question-card" id="mcq-card"></article>
         <div class="pager"><button id="prev-mcq" class="secondary">← Previous</button><button id="next-mcq">Next →</button></div>
       </section>
