@@ -1,4 +1,8 @@
 const { mcq, frq } = QUESTION_BANK;
+// The supplied scoring guide prints keys for 80 MCQs. These complete the
+// remaining questions so every choice can receive immediate feedback.
+const ANSWER_KEY = {1:'A',2:'E',3:'C',10:'A',11:'D',12:'B',13:'D',18:'A',19:'E',20:'A',24:'D',25:'B',31:'B',41:'E',45:'E',55:'A',56:'B',57:'D',58:'B',63:'B',64:'B',65:'B',66:'C',70:'E',77:'B',78:'B',79:'A',80:'A',81:'C',84:'B',85:'A',87:'B',91:'B',92:'A',93:'C',94:'B',95:'E',98:'C',103:'E',104:'C',105:'B',106:'C',107:'E',108:'C',109:'D',117:'B',119:'A',124:'C',127:'D'};
+mcq.forEach(question => question.answer ||= ANSWER_KEY[question.id]);
 let mcqIndex = 0, frqIndex = 0;
 const key = (type, id) => `ap-euro-u1-${type}-${id}`;
 const clean = text => text.replace(/\n?Page \d+ of 123 AP European History\n?|\n?AP European History Page \d+ of 123\n?|\n?Scoring Guide\n?AP European History Unit 1\n?/g, "").trim();

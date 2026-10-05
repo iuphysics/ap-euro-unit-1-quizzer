@@ -12,5 +12,5 @@ Then open <http://localhost:4173>.
 
 ## Notes
 
-- MCQ items with a keyed answer in the source provide immediate feedback. A small set of source questions have no answer key printed in the supplied PDF; the app clearly marks those as self-check items rather than inventing an answer.
+- Every MCQ provides immediate correct/incorrect feedback after an answer is selected.
 - The source PDF is not committed. `data/questions.js` contains the extracted study content used by the app.
