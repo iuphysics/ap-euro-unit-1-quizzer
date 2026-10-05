@@ -1,0 +1,19 @@
+.visual {
+  margin: 1.25rem 0;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: .5rem;
+}
+
+.visual img {
+  display: block;
+  width: 100%;
+  max-height: 620px;
+  object-fit: contain;
+}
+
+.visual figcaption {
+  color: var(--muted);
+  font: .75rem ui-sans-serif, system-ui;
+  padding: .45rem .2rem .1rem;
+}
